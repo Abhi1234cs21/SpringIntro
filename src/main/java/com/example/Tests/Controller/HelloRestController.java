@@ -17,4 +17,9 @@ public class HelloRestController {
     public String getPersonalizedHello(@RequestParam String name) {
         return "Hello " + name + " from BridgeLabz";
     }
+
+    @GetMapping("/params/{name}")
+    public String sayHelloPathVariable(@PathVariable String name){
+        return "Hello " + name+" from Bridgelabz";
+    }
 }
