@@ -11,4 +11,10 @@ public class HelloRestController {
     public String getHelloMessage() {
         return "Hello from BridgeLabz";
     }
+
+    // GET Request with Query Parameter
+    @GetMapping("/query")
+    public String getPersonalizedHello(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
 }
