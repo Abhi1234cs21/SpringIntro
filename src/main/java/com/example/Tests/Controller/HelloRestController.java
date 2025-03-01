@@ -1,5 +1,6 @@
 package com.example.Tests.Controller;
 
+import com.example.Tests.dto.UserDTO;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,7 +20,15 @@ public class HelloRestController {
     }
 
     @GetMapping("/params/{name}")
-    public String sayHelloPathVariable(@PathVariable String name){
-        return "Hello " + name+" from Bridgelabz";
+    public String sayHelloPathVariable(@PathVariable String name) {
+        return "Hello " + name + " from Bridgelabz";
     }
+    // Post Request
+    // http://localhost:8080/hello/post (Hello Abhishek Adjariya from BridgeLabz)
+    @PostMapping("/post")
+    public String sayHelloPost(@RequestBody UserDTO user){
+        return "Hello " + user.getFirstName()+" "+user.getLastName()+" from Bridgelabz";
+    }
+
 }
+
